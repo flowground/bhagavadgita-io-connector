@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "client_id": {
+                    "description": "Your app's client_id. Get from API dashboard.",
+                    "type": "string"
+                },
+                "client_secret": {
+                    "description": "Your app's client_secret. Get from API dashboard.",
+                    "type": "string"
+                },
+                "grant_type": {
+                    "description": "Grant Type.",
+                    "type": "string",
+                    "default": "client_credentials"
+                },
+                "scope": {
+                    "description": "The resources that you would like to access.",
+                    "type": "string",
+                    "default": "verse chapter"
+                }
+            },
+            "required": [
+                "client_id"
+            ]
+        }
+    }
+}

@@ -1,0 +1,134 @@
+{
+    "title": "Bhagavad Gita",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/bhagavadgita.io/1.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://bhagavadgita.io/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_api_v1_chapters": {
+            "main": "./lib/actions/get_api_v1_chapters.js",
+            "title": "Get all the 18 Chapters of the Bhagavad Gita.",
+            "description": "Get a list of all the 18 Chapters of the Bhagavad Gita.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_api_v1_chapters.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_api_v1_chapters__chapter_number_": {
+            "main": "./lib/actions/get_api_v1_chapters__chapter_number_.js",
+            "title": "Get a specific chapter from the Bhagavad Gita.",
+            "description": "Get information about a specific chapter from the Bhagavad Gita.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_api_v1_chapters__chapter_number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_api_v1_chapters__chapter_number__verses": {
+            "main": "./lib/actions/get_api_v1_chapters__chapter_number__verses.js",
+            "title": "Get all the Verses from a Chapter.",
+            "description": "Get a list of all Verses from a particular Chapter.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_api_v1_chapters__chapter_number__verses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_api_v1_chapters__chapter_number__verses__verse_number_": {
+            "main": "./lib/actions/get_api_v1_chapters__chapter_number__verses__verse_number_.js",
+            "title": "Get a particular verse from a chapter.",
+            "description": "Get a specific verse from a specific chapter.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_api_v1_chapters__chapter_number__verses__verse_number_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_api_v1_verses": {
+            "main": "./lib/actions/get_api_v1_verses.js",
+            "title": "Get all the Verses.",
+            "description": "Get a list of all Verses.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_api_v1_verses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_auth_oauth_token": {
+            "main": "./lib/actions/post_auth_oauth_token.js",
+            "title": "Send client credentials and get an access token.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_auth_oauth_token.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

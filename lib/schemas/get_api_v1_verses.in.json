@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "access_token": {
+            "required": true,
+            "type": "string"
+        },
+        "language": {
+            "type": "string",
+            "enum": [
+                "hi"
+            ]
+        }
+    }
+}
